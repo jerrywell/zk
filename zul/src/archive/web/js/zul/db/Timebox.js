@@ -743,7 +743,7 @@ zul.inp.TimeHandler = zk.$extends(zk.Object, {
 		// first number (hendle max bound)
 		if (pos == this.index[0]) {
 			var text = this.getText(val)
-						.substring((posOfs === 0)? 0: 1).trim(),
+						.substring((posOfs === 0)? 0: 2).trim(),
 				i;
 			if (!text.length) text = '0';
 			
@@ -758,6 +758,7 @@ zul.inp.TimeHandler = zk.$extends(zk.Object, {
 				if (posOfs)
 					this._doShift(wgt, posOfs);
 			}
+		//} else if (pos == (this.))
 		} else if (pos == (this.index[1] + 1)) {//end of handler
 			var i;
 			if (posOfs !== false) {
