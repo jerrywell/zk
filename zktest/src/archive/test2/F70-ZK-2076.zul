@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+F70-ZK-2076.zul
+
+	Purpose:
+		
+	Description:
+		
+	History:
+		Wed, June 19, 2014  5:56:04 PM, Created by jerrychen
+
+Copyright (C)  Potix Corporation. All Rights Reserved.
+
+-->
+<window apply="org.zkoss.zktest.test2.F70_ZK_2076">
+	<div>
+		1. click button test1, text1 will show test.
+		<separator></separator>
+		2. click clean, then click button test2, text1 and text2 will show text.
+		<separator></separator>
+		3. click clean, then click button test3, only text1 will show text.
+	</div>
+    <div>
+        text1: <textbox id="t1" />
+    </div>
+    <div>
+        text2: <textbox id="t2" />
+    </div>
+    <div>
+        text3: <textbox id="t3" />
+    </div>
+    <button id="b1" label="test1" />
+    <button id="b2" label="test2" />
+    <button id="b3" label="test3" />
+    <button id="clean" label="clean" />
+</window>
