@@ -673,14 +673,15 @@ zjq.prototype = {
 	isScrollIntoView: (function () {
 		function _overflowElement(self, recursive) {
 			var el = self.jq[0],
-				te, le, oels = [];
+				te, le, oels = [],
+				doc = (zk.webkit || zk.opera) ? document.body : document.html; // refix ZK-2371
 			do {
 				if (!te) {
-					if (el == document.body || el.style.overflow == 'auto' || el.style.overflowY == 'auto' || jq(el).css('overflow-y') == 'auto')
+					if (el == doc || el.style.overflow == 'auto' || el.style.overflowY == 'auto' || jq(el).css('overflow-y') == 'auto')
 						te = el;
 				}
 				if (!le) {
-					if (el == document.body || el.style.overflow == 'auto' || el.style.overflowX == 'auto' || jq(el).css('overflow-x') == 'auto')
+					if (el == doc || el == document.body || el.style.overflow == 'auto' || el.style.overflowX == 'auto' || jq(el).css('overflow-x') == 'auto')
 						le = el;
 				}
 				if (te && le) {
